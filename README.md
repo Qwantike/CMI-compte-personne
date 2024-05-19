@@ -9,9 +9,9 @@ dans un terminal :
   
 sudo bluetoothctl  
 agent on  
-pair <MAC ADDRESS HC-06>  
+pair "MAC ADDRESS HC-06" 
 ctrl+z pour quitter bluetoothctl  
-sudo rfcomm bind 1 <MAC ADDRESS HC-06>  
+sudo rfcomm bind 0 "MAC ADDRESS HC-06"
   
 Puis dans le bon répertoire :   
   
@@ -22,7 +22,7 @@ accéder au bon dossier
   
 Pour les prochaines mise en route :   
    
-sudo rfcomm bind 1 <MAC ADDRESS HC-06>  
+sudo rfcomm bind 0 "MAC ADDRESS HC-06"  
 ./websocketd --port=8080 --staticdir="/" ./reception-bluetooth.py  
   
 navigateur http://localhost/8080  
