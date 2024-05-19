@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    /*background: linear-gradient(rgb(157, 112, 209), rgb(41, 202, 252));*/
+    background: rgb(41, 202, 252);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+#content {
+    display: flex;
+    flex: 1;
+    height: 100%;
+}
+
+#main-display {
+    text-align: center;
+    height: 200px;
+    border: 2px white solid;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+#mesure {
+    font-size: 90px;
+    font-weight: 600;
+    padding: 10px;
+}
+
+#historique-bar {
+    width: 200px;
+    border: 2px white solid;
+    height: 100%;
+}
+
+#graph-container {
+    flex: 1;
+    border: 2px white solid;
+}
