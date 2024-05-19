@@ -28,5 +28,7 @@ sudo rfcomm bind 1 <MAC ADDRESS HC-06>
 navigateur http://localhost/8080  
 accéder au bon dossier  
 
-
+Auteurs :   
+BARTIER Nathan  
+MOINEREAU Paul  
 
