@@ -12,19 +12,22 @@ agent on
 pair "MAC ADDRESS HC-06"
 ```
 ctrl+z pour quitter bluetoothctl  
+```bash
 sudo rfcomm bind 0 "MAC ADDRESS HC-06"
-  
-Puis dans le bon répertoire :   
-  
+``
+  ```bash
+cd /répertoire content les fichiers
 ./websocketd --port=8080 --staticdir="/" ./reception-bluetooth.py  
-  
+``
 navigateur http://localhost/8080  
 accéder au bon dossier  
   
 Pour les prochaines mise en route :   
-   
+
+```bash
 sudo rfcomm bind 0 "MAC ADDRESS HC-06"  
-./websocketd --port=8080 --staticdir="/" ./reception-bluetooth.py  
+./websocketd --port=8080 --staticdir="/" ./reception-bluetooth.py
+``
   
 navigateur http://localhost/8080  
 accéder au bon dossier  
