@@ -6,10 +6,11 @@ Les étapes de première mise en route :
 Côté Arduino, téléverser le code.  
 Côté Raspberry :   
 dans un terminal :  
-  
+```bash
 sudo bluetoothctl  
 agent on  
-pair "MAC ADDRESS HC-06" 
+pair "MAC ADDRESS HC-06"
+```
 ctrl+z pour quitter bluetoothctl  
 sudo rfcomm bind 0 "MAC ADDRESS HC-06"
   
