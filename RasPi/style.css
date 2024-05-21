@@ -10,8 +10,8 @@ body {
 }
 
 body {
-    /*background: linear-gradient(rgb(157, 112, 209), rgb(41, 202, 252));*/
-    background: rgb(41, 202, 252);
+    background: linear-gradient(rgb(157, 112, 209), rgb(41, 202, 252));
+    /*background: rgb(41, 202, 252);*/
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     display: flex;

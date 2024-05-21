@@ -14,7 +14,6 @@ function log(msg) {
 };
 function mesure(msg) {
     temp = msg;
-    document.getElementById("mesure").style.fontSize = "30px";
     document.getElementById('mesure').innerHTML = temp;
 };
 
@@ -72,8 +71,22 @@ var myChart = new Chart(ctx, {
     },
     options: {
         scales: {
+	    x:{
+		grid:{
+			color:'rgba(255,255,255,0.1)'
+			},
+		ticks:{
+			color:'rgba(255,255,255,0.6)'
+			}
+		},
             y: {
-                beginAtZero: true
+                beginAtZero: true,
+		grid:{
+			color:'rgba(255,255,255,0.1)'
+		},
+		ticks:{
+			color:'rgba(255,255,255,0.6)'
+		}
             }
         }
     }
@@ -94,10 +107,10 @@ function updateChart() {
     myChart.update();
 }
 
-// Exemple de récupération des mesures toutes les 5 minutes et ajout au graphique
+// Exemple de récupération des mesures toutes les 5 sec et ajout au graphique
 setInterval(function () {
     // Supposons que vous récupérez la mesure de la variable 'mesure' toutes les minutes
     var time = new Date().toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
     var value = parseInt(document.getElementById('mesure').innerHTML);
     addMeasurement(time, value);
-}, 60000); // 60000 millisecondes = 1 minute
+}, 5000); // 5000 millisecondes = 5sec

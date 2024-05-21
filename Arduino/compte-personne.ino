@@ -2,16 +2,16 @@
 
 #define DEBUG false
 
-
-SoftwareSerial BTdevice(5,4); //RX,TX
+SoftwareSerial BTdevice(5, 4); // RX,TX
 
 const int sensorPin1 = 2; // IR sensor 1 pin
 const int sensorPin2 = 3; // IR sensor 2 pin
 
 unsigned long debut_flag;
-int cpt=0;
+int cpt = 0;
 
-void setup() {
+void setup()
+{
     pinMode(sensorPin1, INPUT_PULLUP);
     pinMode(sensorPin2, INPUT_PULLUP);
     Serial.begin(9600);
@@ -30,22 +30,27 @@ bool check2()
     return digitalRead(sensorPin2) == LOW;
 }
 
-void loop() {
+void loop()
+{
+    if (!BTdevice.available())
+    {
+        cpt = 0;
+    }
     bool flag1 = false;
     bool flag2 = false;
-    if (BTdevice.available()>0)
-    {  
-       #if DEBUG
+    if (BTdevice.available() > 0)
+    {
+#if DEBUG
         Serial.print("BT disponible");
         delay(1000);
-        #endif
+#endif
     }
-    else 
-    {  
-        #if DEBUG
+    else
+    {
+#if DEBUG
         Serial.print("BT non-disponible");
         delay(1000);
-        #endif
+#endif
     }
 
     flag1 = check1();
@@ -61,12 +66,11 @@ void loop() {
             cpt++;
             Serial.print("Sent value:");
             Serial.println(cpt);
-            BTdevice.write(String(cpt).c_str());              
+            BTdevice.write(String(cpt).c_str());
             BTdevice.write("\n");
             delay(1000);
             flag2 = false;
             flag1 = false;
-           
         }
     }
 
@@ -81,9 +85,10 @@ void loop() {
         if (flag1)
         {
             cpt--;
-            if(cpt<0){
-              cpt=0;
-              }
+            if (cpt < 0)
+            {
+                cpt = 0;
+            }
             Serial.print("Sent value:");
             Serial.println(cpt);
             BTdevice.write(String(cpt).c_str());
