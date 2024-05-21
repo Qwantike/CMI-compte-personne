@@ -26,7 +26,7 @@ Pour les prochaines mise en route :
 
 ```bash
 sudo rfcomm bind 0 "MAC ADDRESS HC-06"  
-./websocketd --port=8080 --staticdir="/" ./reception-bluetooth.py
+./websocketd --port=8080 --staticdir=. ./reception-bluetooth.py
 ```
   
 navigateur http://localhost/8080  
